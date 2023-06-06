@@ -14,7 +14,10 @@ pipeline
     {
       steps
       {
-        bat 'move "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\PPL_8\\Jenkinsfile" "C:\\"'
+        script
+        {
+          bat 'move "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\PPL_8\\Jenkinsfile" "C:\\"'
+        }
       }
     }
  }
