@@ -1,24 +1,18 @@
 pipeline
 {
-  agent any
-  stages
-  {
-    stage ("Hola mundo")
+    agent any
+    stages
     {
-      steps
-      {
-        echo "Hola Mundo"
-      }
-    }
-    stage ("Mover archivo")
-    {
-      steps
-      {
-        script
+        stage("Creacion del fichero")
         {
-          bat 'move "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\PPL_8\\Jenkinsfile" "C:\\"'
+            steps
+            {
+                script
+                {
+                    def contenido = "Bienvenido al pipeline del ejercicio3"
+                    writeFile(file: "salida_ejercicio3.txt", text: contenido)
+                }
+            }
         }
-      }
     }
- }
 }
